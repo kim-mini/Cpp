@@ -1,4 +1,5 @@
 # Cpp 
+[cpp 공부 사이트](https://karupro.tistory.com)
 
 
 ## day 1
@@ -190,3 +191,90 @@ int main() {
   return 0;
 }
 ```
+
+## day 3
+
+```cpp
+// HELLO, WORLD! 를 출력해 보세요.
+// 자신의 이름을 출력해 보세요.
+// 2020 을 출력해 보세요.
+// 다음처럼 출력해 보세요:
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  cout << "HELLO, WORLD\n";
+  cout << "김민이\n";
+  cout << "2020\n";
+  cout << "즐거운 C++ 프로그래밍 \n오늘은 출력을 연습하고 있습니다.";
+  return 0;
+}
+```
+
+```cpp
+// sum이라는 정수형 변수를 선언해 보세요.
+// 1부터 5를 곱한 값을 sum에 대입하고, 출력해 보세요.
+// sum에 '5 팩토리얼'이라는 주석을 달아보세요.
+// sum을 내포블록에 선언하고, 내포블록에서 출력해 보세요.
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    {
+        int sum = 0; // 5 팩토리얼
+        sum =  1 + 2 + 3 + 4 + 5;
+        cout << sum;
+    }
+  return 0;
+}
+```
+---
+
+``int age = 0;`` <<  C언어식 초기화 방법 
+
+``int age{0};`` << c++에서는 이렇게
+
+``cpp``에서는 가급적 ``중괄호``를 활용해 ``변수 초기화``를 시켜주도록 하자
+
+---
+
+| 논리형 | bool | 1바이트 | true, false |
+|------|------|--------|-------------|
+|자동   | auto |        | 초기화한 자료형의 값 |
+
+``boolean`` : bool 타입의 변수에는 숫자를 넣으면 안 되고 반드시 ``true``와 ``false``
+
+```cpp
+bool result{True};
+```
+
+``auto`` : 초기값의 자료형에 맞춰 ``변수의 형식을 자동``으로 결정해주는 역할
+
+```cpp
+// 그 대신 선언할 때 초기화를 동시에 해 줘야 합니다.
+auto a = 123 // int
+```
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    auto str = "안녕하세요";
+    cout << str << endl;
+    return 0;
+}
+```
+
+### decltype
+
+- auto가 초기값에 맞추어 자동으로 형식을 결정했다면 decltype은 '~와 같은 자료형' 을 정해주는 것에 가깝습니다
+
+- decltype(x) 라고 하면 x와 같은 자료형이 됩니다. 이때 x는 10, 3.14, 'A'와 같은 상수가 되어도 좋고, 이미 선언된 변수가 되어도 좋습니다
