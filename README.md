@@ -1,6 +1,16 @@
 # Cpp 
 [cpp 공부 사이트](https://karupro.tistory.com)
 
+## c++ basic
+```cpp
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    return 0;
+}
+```
 
 ## day 1
 
@@ -278,3 +288,90 @@ int main()
 - auto가 초기값에 맞추어 자동으로 형식을 결정했다면 decltype은 '~와 같은 자료형' 을 정해주는 것에 가깝습니다
 
 - decltype(x) 라고 하면 x와 같은 자료형이 됩니다. 이때 x는 10, 3.14, 'A'와 같은 상수가 되어도 좋고, 이미 선언된 변수가 되어도 좋습니다
+
+---
+
+### 여러가지 자료형을 써보자
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int age{20};
+    double pi{3.14};
+    bool result{false};
+    auto str{R"(평화롭고 따스한 "봄날"ㅎ)"};
+    char ar{'\a'};
+    
+    cout << "나의 나이는 " << age << endl;
+    cout << "원주율의 값은? "<< pi << endl;
+    cout << "c++은 쉬워요? " << result << endl;
+    cout << str << endl;
+    cout << "알람아 울려라! " << ar << endl;
+    return 0;
+}
+```
+
+### 출력문을 한문장으로 묶을 수 있다
+
+```cpp
+cout << "나의 나이는 " << age << "살\n" 
+    << "원주율의 값은? "<< pi << endl
+    << "c++은 쉬워요? " << result << endl
+    << str << endl
+    << "알람아 울려라! " << ar << endl;
+```
+
+### printf() 연습해보기
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int age{20};
+    double pi{3.14};
+    bool result{false};
+    auto str{R"(평화롭고 따스한 "봄날"ㅎ)"};
+    char ar{'\a'};
+    
+    //cout << "나의 나이는 " << age << "살\n" 
+    printf("나의 나이는 %d살\n", age);
+    // << "원주율의 값은? "<< pi << endl
+    printf("원주율의 값은? %.2f\n", pi);
+    // << "c++은 쉬워요? " << result << endl
+    printf("c++은 쉬워요? %d\n", result);
+    // << str << endl
+    printf("%s\n", str);
+    // << "알람아 울려라! " << ar << endl;
+    printf("알람아 울려라! %c\n", ar);
+    return 0;
+}
+```
+
+---
+
+```cpp
+// char 변수에 작은 따옴표를 저장하고, 출력해보세요.
+// 날 문자열 리터럴을 사용해서 엔터를 출력해 보세요.
+// std::printf() 함수를 통해 '50%'를 %d를 이용하여 출력해 보세요.
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    char str{'\''};
+    // 날 문자열 리터럴 기본형은
+    // ---> R"()"
+    auto str2{R"(엔터를 
+    출력하자)"};
+    
+    cout << str << endl;
+    cout << str2 << endl;
+    printf("%d%%",50);
+    return 0;
+}
+```
