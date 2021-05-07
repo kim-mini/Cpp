@@ -375,3 +375,23 @@ int main()
     return 0;
 }
 ```
+
+## day 4
+
+### 전처리 지시자
+
+`#include` : 특정 소스위에 그 해당 코드를 붙여주는 역할
+
+`#define` : 매크로 함수를 정의하거나 소스 코드 내에서 매크로 상수를 정의 하는데 사용
+
+```cpp
+#define MAX_LIGHT 350 //-> MAX_LIGHT를 쓰면 350의 값이 들어가게 된다
+```
+
+`#undef` : define된 매크로 상수/함수를 해제하는데 사용
+
+`#if, #elif, #else ,#endif` : 조건문과 같은 역활 0이 아니라면 조건문안으로 들어간다
+
+`#ifdef` : 매크로 상수 정의 여부를 평가한다 / 정의가 되어있으면 TRUE
+
+`#error` : fatal error를 발생시킨다
